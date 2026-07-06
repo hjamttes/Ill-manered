@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ill Mannered Brewery | Award-Winning Ohio Craft Beer</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+    --black:#111111;
+    --dark:#1a1a1a;
+    --amber:#d28b2d;
+    --cream:#f5f1e8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--black);
+    color:white;
+    overflow-x:hidden;
+}
+h1,h2,h3{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+section{padding:90px 8%;}
+a{text-decoration:none;color:white}
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:.3s;
+}
+nav.scrolled{
+    background:rgba(0,0,0,.92);
+    backdrop-filter:blur(10px);
+}
+.logo{
+    color:var(--amber);
+    font-family:'Oswald',sans-serif;
+    font-size:1.8rem;
+}
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.8)),
+        url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+}
+.hero-content{max-width:760px;}
+.hero h1{
+    font-size:clamp(3rem,7vw,6rem);
+    line-height:.95;
+}
+.hero p{
+    margin:25px 0;
+    color:#ddd;
+    font-size:1.1rem;
+}
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:var(--amber);
+    color:black;
+    font-weight:700;
+    border-radius:4px;
+}
+.outline-btn{
+    display:inline-block;
+    padding:12px 26px;
+    border:2px solid white;
+    margin-left:10px;
+}
+.tap-count{
+    margin-top:25px;
+    color:var(--amber);
+    font-weight:bold;
+}
+.beer-board{background:#181818;}
+.board-grid,.location-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    margin-top:35px;
+}
+.beer-card,.location-card{
+    background:#222;
+    padding:25px;
+    border-left:4px solid var(--amber);
+}
+.locations{
+    background:#101010;
+}
+.events .event{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    padding:18px 0;
+}
+.story{
+    text-align:center;
+    background:#161616;
+}
+.story p{
+    max-width:850px;
+    margin:20px auto;
+    line-height:1.8;
+    color:#ccc;
+}
+footer{
+    text-align:center;
+    padding:50px 8%;
+    background:black;
+}
+.footer-links{
+    margin:20px 0;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.footer-links button{
+    background:none;
+    border:none;
+    color:#ccc;
+    cursor:pointer;
+}
+.footer-links button:hover{
+    color:var(--amber);
+}
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    z-index:5000;
+    justify-content:center;
+    align-items:center;
+}
+.modal-content{
+    background:#1a1a1a;
+    width:90%;
+    max-width:500px;
+    padding:40px;
+    position:relative;
+    text-align:center;
+}
+.close-btn{
+    position:absolute;
+    right:15px;
+    top:8px;
+    cursor:pointer;
+    font-size:2rem;
+}
+@media(max-width:768px){
+    .nav-links{display:none;}
+    .outline-btn{display:block;margin:10px 0 0 0;}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="logo">ILL MANNERED</div>
+    <div class="nav-links">
+        <a href="#">Beer</a>
+        <a href="#">Taprooms</a>
+        <a href="#">Events</a>
+        <a href="#">Merch</a>
+        <a href="#">Order Online</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>AWARD-WINNING<br>OHIO CRAFT BEER</h1>
+        <p>
+            Brewing in Powell since 2015. Now pouring in Powell and Uptown Marysville.
+            Great beer, welcoming taprooms, patios, events, and community.
+        </p>
+
+        <a href="#" class="btn">View Tap List</a>
+        <a href="#" class="outline-btn">Order Pickup</a>
+
+        <div class="tap-count">
+            <span id="tapCounter">0</span> Beers Currently Pouring
+        </div>
+    </div>
+</section>
+
+<section class="beer-board">
+    <h2>Now Pouring</h2>
+
+    <div class="board-grid" id="boardGrid">
+        <div class="beer-card">
+            <h3>Ill Monk</h3>
+            <p>Belgian Dubbel</p>
+        </div>
+        <div class="beer-card">
+            <h3>Scottish Ale</h3>
+            <p>Award-Winning Favorite</p>
+        </div>
+        <div class="beer-card">
+            <h3>Hop Disorder</h3>
+            <p>Hazy IPA</p>
+        </div>
+        <div class="beer-card">
+            <h3>Barrel Reserve</h3>
+            <p>Limited Release</p>
+        </div>
+    </div>
+</section>
+
+<section class="locations">
+    <h2>Choose Your Hangout</h2>
+
+    <div class="location-grid">
+        <div class="location-card">
+            <h3>Powell Brewery & Taproom</h3>
+            <p>
+                Home to the brewery, featuring reclaimed barnwood details,
+                outdoor patio seating, rotating taps, and regular food truck visits.
+            </p>
+        </div>
+
+        <div class="location-card">
+            <h3>Uptown Marysville</h3>
+            <p>
+                Located in a restored 150+ year-old building with original brick walls,
+                wood floors, barrel-house character, and an outdoor courtyard with fire pits.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="events">
+    <h2>This Week At Ill Mannered</h2>
+
+    <div id="eventsList">
+    <div class="event">
+        <span>Trivia Night</span>
+        <span>Tuesday</span>
+    </div>
+
+    <div class="event">
+        <span>Live Music</span>
+        <span>Friday</span>
+    </div>
+
+    <div class="event">
+        <span>Food Truck Event</span>
+        <span>Saturday</span>
+    </div>
+
+    <div class="event">
+        <span>Special Beer Release</span>
+        <span>Sunday</span>
+    </div>
+    </div>
+</section>
+
+<section class="story">
+    <h2>Award-Winning Ohio Craft Beer</h2>
+
+    <p>
+        Since opening in Powell in 2015, Ill Mannered Brewing Company has focused
+        on creating approachable, award-winning craft beer and welcoming spaces
+        built around community.
+    </p>
+
+    <p>
+        Today, guests can visit both the original Powell brewery and the Uptown
+        Marysville taproom, each offering a distinct atmosphere while sharing the
+        same commitment to great beer and good company.
+    </p>
+</section>
+
+<footer>
+    <h3>Drink Better. Behave Worse.</h3>
+
+    <div class="footer-links">
+        <button onclick="showPopup('Privacy Policy')">Privacy Policy</button>
+        <button onclick="showPopup('Terms of Service')">Terms of Service</button>
+    </div>
+
+    <p>© Ill Mannered Brewing Company</p>
+</footer>
+
+<div id="legalModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+    </div>
+</div>
+
+<script>
+window.addEventListener("scroll",()=>{
+    const nav=document.getElementById("navbar");
+    if(window.scrollY>50){
+        nav.classList.add("scrolled");
+    }else{
+        nav.classList.remove("scrolled");
+    }
+});
+
+function animateValue(id,start,end,duration){
+    let current=start;
+    const range=end-start;
+    const step=Math.max(1,Math.floor(duration/range));
+    const timer=setInterval(()=>{
+        current++;
+        document.getElementById(id).textContent=current;
+        if(current>=end) clearInterval(timer);
+    },step);
+}
+
+window.addEventListener("load",()=>{
+    animateValue("tapCounter",0,20,1200);
+});
+
+function showPopup(option){
+    document.getElementById("modalTitle").textContent=option;
+    document.getElementById("modalText").textContent=
+        "This is usually where your " + option + " would be.";
+    document.getElementById("legalModal").style.display="flex";
+}
+
+function closePopup(){
+    document.getElementById("legalModal").style.display="none";
+}
+
+window.addEventListener("click",(e)=>{
+    const modal=document.getElementById("legalModal");
+    if(e.target===modal){
+        closePopup();
+    }
+});
+
+/* ============================================================
+   LIVE CONTENT FROM GOOGLE SHEETS
+   ------------------------------------------------------------
+   Paste your two "Publish to web" CSV links below.
+   How to get them (one-time setup, ~5 minutes):
+
+   1. Go to Google Sheets, create a new sheet.
+   2. Make TWO tabs (bottom of screen): name one "Beers",
+      one "Events".
+   3. In the "Beers" tab, put headers in row 1: Name | Style
+      Then list beers below, one per row.
+        Name          Style
+        Ill Monk      Belgian Dubbel
+        Hop Disorder  Hazy IPA
+   4. In the "Events" tab, put headers in row 1: Name | Day
+        Name              Day
+        Trivia Night      Tuesday
+        Live Music        Friday
+   5. File > Share > Publish to web.
+   6. Choose the "Beers" tab, format "Comma-separated values
+      (.csv)", click Publish. Copy the link it gives you.
+   7. Repeat for the "Events" tab.
+   8. Paste both links into BEERS_CSV_URL and EVENTS_CSV_URL
+      below (keep the quotes).
+
+   From then on, editing the spreadsheet is all the brewery
+   needs to do — add a row, delete a row, change a word — and
+   the website updates itself automatically. If the links are
+   left blank, or the sheet is unreachable, the site quietly
+   falls back to the hardcoded cards already in the HTML, so
+   nothing ever breaks.
+   ============================================================ */
+const BEERS_CSV_URL  = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhkqlgAAwZwO8TnqGkKlFAGpHv8yCGsZcdLMp49OKJ2XZNEhr4ZEPsqxfPy_GtU7TkanM26mFWa-hM/pub?gid=56140579&single=true&output=csv";
+const EVENTS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhkqlgAAwZwO8TnqGkKlFAGpHv8yCGsZcdLMp49OKJ2XZNEhr4ZEPsqxfPy_GtU7TkanM26mFWa-hM/pub?output=csv";
+
+// Minimal CSV parser: handles quoted fields and commas inside quotes.
+function parseCSV(text){
+    const rows=[];
+    let row=[],field="",inQuotes=false;
+    for(let i=0;i<text.length;i++){
+        const c=text[i];
+        if(inQuotes){
+            if(c==='"'){
+                if(text[i+1]==='"'){field+='"';i++;}
+                else{inQuotes=false;}
+            }else{field+=c;}
+        }else{
+            if(c==='"'){inQuotes=true;}
+            else if(c===','){row.push(field);field="";}
+            else if(c==='\n'||c==='\r'){
+                if(field.length||row.length){row.push(field);rows.push(row);}
+                field="";row=[];
+                if(c==='\r'&&text[i+1]==='\n')i++;
+            }else{field+=c;}
+        }
+    }
+    if(field.length||row.length){row.push(field);rows.push(row);}
+    return rows.filter(r=>r.some(cell=>cell.trim().length));
+}
+
+function escapeHTML(str){
+    const div=document.createElement("div");
+    div.textContent=str;
+    return div.innerHTML;
+}
+
+async function loadSheet(url){
+    if(!url) return null;
+    try{
+        const res=await fetch(url,{cache:"no-store"});
+        if(!res.ok) throw new Error("Bad response");
+        const text=await res.text();
+        const rows=parseCSV(text);
+        if(rows.length<2) throw new Error("No data rows");
+        return rows.slice(1); // drop header row
+    }catch(err){
+        console.warn("Live content unavailable, using fallback.",err);
+        return null;
+    }
+}
+
+async function renderBeers(){
+    const rows=await loadSheet(BEERS_CSV_URL);
+    if(!rows) return; // keep hardcoded fallback cards
+    const grid=document.getElementById("boardGrid");
+    grid.innerHTML=rows.map(r=>{
+        const name=escapeHTML(r[0]||"");
+        const style=escapeHTML(r[1]||"");
+        return `<div class="beer-card"><h3>${name}</h3><p>${style}</p></div>`;
+    }).join("");
+    document.getElementById("tapCounter").textContent=rows.length;
+}
+
+async function renderEvents(){
+    const rows=await loadSheet(EVENTS_CSV_URL);
+    if(!rows) return; // keep hardcoded fallback list
+    const list=document.getElementById("eventsList");
+    list.innerHTML=rows.map(r=>{
+        const name=escapeHTML(r[0]||"");
+        const day=escapeHTML(r[1]||"");
+        return `<div class="event"><span>${name}</span><span>${day}</span></div>`;
+    }).join("");
+}
+
+renderBeers();
+renderEvents();
+</script>
+
+</body>
+</html>
