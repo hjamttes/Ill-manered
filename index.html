@@ -13,6 +13,7 @@
     --cream:#f5f1e8;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;}
 body{
     font-family:'Inter',sans-serif;
     background:var(--black);
@@ -57,7 +58,7 @@ nav.scrolled{
     align-items:center;
     background:
         linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.8)),
-        url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1600&q=80');
+        url('https://images.squarespace-cdn.com/content/v1/551592a8e4b04038107b55b8/1774537961781-NAVLXZL5IKMYDVWEW3O1/Powell+Patio.jpg');
     background-size:cover;
     background-position:center;
 }
@@ -102,6 +103,21 @@ nav.scrolled{
     padding:25px;
     border-left:4px solid var(--amber);
 }
+.location-img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    margin-bottom:20px;
+    border-radius:2px;
+}
+.location-meta{
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,.12);
+    color:var(--amber);
+    font-size:.9rem;
+    line-height:1.7;
+}
 .locations{
     background:#101010;
 }
@@ -120,6 +136,13 @@ nav.scrolled{
     margin:20px auto;
     line-height:1.8;
     color:#ccc;
+}
+.founders-img{
+    max-width:600px;
+    width:100%;
+    margin:30px auto;
+    border-radius:2px;
+    display:block;
 }
 footer{
     text-align:center;
@@ -141,6 +164,31 @@ footer{
 }
 .footer-links button:hover{
     color:var(--amber);
+}
+.footer-social{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:15px;
+    flex-wrap:wrap;
+}
+.footer-social a{
+    color:var(--amber);
+    font-weight:500;
+}
+.footer-social a:hover{
+    color:white;
+}
+.footer-locations{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin:35px 0;
+    flex-wrap:wrap;
+    color:#ccc;
+    font-size:.9rem;
+    line-height:1.8;
+    text-align:left;
 }
 .modal{
     display:none;
@@ -177,11 +225,11 @@ footer{
 <nav id="navbar">
     <div class="logo">ILL MANNERED</div>
     <div class="nav-links">
-        <a href="#">Beer</a>
-        <a href="#">Taprooms</a>
-        <a href="#">Events</a>
-        <a href="#">Merch</a>
-        <a href="#">Order Online</a>
+        <a href="#beer-board">Beer</a>
+        <a href="#locations">Taprooms</a>
+        <a href="#events">Events</a>
+        <a href="#story">About</a>
+        <a href="https://commerce.arryved.com/location/BHwJdw4e" target="_blank" rel="noopener">Order Online</a>
     </div>
 </nav>
 
@@ -193,8 +241,8 @@ footer{
             Great beer, welcoming taprooms, patios, events, and community.
         </p>
 
-        <a href="#" class="btn">View Tap List</a>
-        <a href="#" class="outline-btn">Order Pickup</a>
+        <a href="#beer-board" class="btn">View Tap List</a>
+        <a href="https://commerce.arryved.com/location/BHwJdw4e" target="_blank" rel="noopener" class="outline-btn">Order Pickup</a>
 
         <div class="tap-count">
             <span id="tapCounter">0</span> Beers Currently Pouring
@@ -202,52 +250,82 @@ footer{
     </div>
 </section>
 
-<section class="beer-board">
+<section class="beer-board" id="beer-board">
     <h2>Now Pouring</h2>
 
     <div class="board-grid" id="boardGrid">
         <div class="beer-card">
-            <h3>Ill Monk</h3>
-            <p>Belgian Dubbel</p>
+            <h3>Ill Manna Slamma</h3>
+            <p>Blonde Ale | 4.8% | 17 IBU</p>
         </div>
         <div class="beer-card">
-            <h3>Scottish Ale</h3>
-            <p>Award-Winning Favorite</p>
+            <h3>Illsner</h3>
+            <p>Pilsner | 5.5% | 34 IBU</p>
         </div>
         <div class="beer-card">
-            <h3>Hop Disorder</h3>
-            <p>Hazy IPA</p>
+            <h3>Arcane Galaxy</h3>
+            <p>American IPA | 6.4% | 64 IBU</p>
         </div>
         <div class="beer-card">
-            <h3>Barrel Reserve</h3>
-            <p>Limited Release</p>
+            <h3>Zack Morris</h3>
+            <p>90's Style IPA | 7.0% | 71 IBU</p>
+        </div>
+        <div class="beer-card">
+            <h3>Haze Colored Lenses</h3>
+            <p>New England IPA | 6.4% | 24 IBU</p>
+        </div>
+        <div class="beer-card">
+            <h3>Flat Black</h3>
+            <p>American Stout | 7.5% | 62 IBU</p>
+        </div>
+        <div class="beer-card">
+            <h3>Fat Bottomed Girl</h3>
+            <p>Belgian Dark Strong | 9.4% | 38 IBU</p>
+        </div>
+        <div class="beer-card">
+            <h3>Apple Brandy Meglaphobic</h3>
+            <p>Barrel Aged Imperial Stout | 13.1%</p>
         </div>
     </div>
 </section>
 
-<section class="locations">
+<section class="locations" id="locations">
     <h2>Choose Your Hangout</h2>
 
     <div class="location-grid">
         <div class="location-card">
+            <img src="https://images.squarespace-cdn.com/content/v1/551592a8e4b04038107b55b8/1774537961160-885N05AWX7W1PZ3T8ACO/Powell+BB+Taproom.jpg" alt="Powell Taproom" class="location-img">
             <h3>Powell Brewery & Taproom</h3>
             <p>
                 Home to the brewery, featuring reclaimed barnwood details,
                 outdoor patio seating, rotating taps, and regular food truck visits.
             </p>
+            <p class="location-meta">
+                38 Grace Drive, Powell, OH 43065<br>
+                (614) 859-6819<br><br>
+                Mon: 4pm–8pm &nbsp;|&nbsp; Tue–Thu: 4pm–10pm<br>
+                Fri: 3pm–10pm &nbsp;|&nbsp; Sat: 12pm–10pm &nbsp;|&nbsp; Sun: 12pm–8pm
+            </p>
         </div>
 
         <div class="location-card">
+            <img src="https://images.squarespace-cdn.com/content/v1/551592a8e4b04038107b55b8/1774537969749-AI1E2ZD004P0QMH2CCGI/Marysville+Taproom+Interior.jpg" alt="Marysville Taproom" class="location-img">
             <h3>Uptown Marysville</h3>
             <p>
                 Located in a restored 150+ year-old building with original brick walls,
                 wood floors, barrel-house character, and an outdoor courtyard with fire pits.
             </p>
+            <p class="location-meta">
+                117 S. Main Street, Marysville, OH 43040<br>
+                (937) 209-3708<br><br>
+                Mon: Closed &nbsp;|&nbsp; Tue–Thu: 4pm–10pm<br>
+                Fri: 3pm–10pm &nbsp;|&nbsp; Sat: 12pm–10pm &nbsp;|&nbsp; Sun: 12pm–8pm
+            </p>
         </div>
     </div>
 </section>
 
-<section class="events">
+<section class="events" id="events">
     <h2>This Week At Ill Mannered</h2>
 
     <div id="eventsList">
@@ -273,24 +351,47 @@ footer{
     </div>
 </section>
 
-<section class="story">
+<section class="story" id="story">
     <h2>Award-Winning Ohio Craft Beer</h2>
 
+    <img src="https://images.squarespace-cdn.com/content/v1/551592a8e4b04038107b55b8/1439303269134-542Y5H6M78XVQSLNCAGJ/8-8-2015-12+smaller.jpg" alt="Ill Mannered Brewing founders in front of the original brewery location" class="founders-img">
+
     <p>
-        Since opening in Powell in 2015, Ill Mannered Brewing Company has focused
-        on creating approachable, award-winning craft beer and welcoming spaces
-        built around community.
+        Ill Mannered Brewing Company is the collective brain child of the Ill Mannered
+        Team: Ryan Romer-Jordan, Brian Mathias, Tom Ayers, and Greg Dannemiller —
+        passionate home brewers who combined their varied backgrounds to build a
+        unique brewing experience in the suburbs of Columbus.
     </p>
 
     <p>
-        Today, guests can visit both the original Powell brewery and the Uptown
-        Marysville taproom, each offering a distinct atmosphere while sharing the
-        same commitment to great beer and good company.
+        The Powell Taproom is powered by a 6-barrel all-electric brewery, brewing
+        just 186 gallons at a time so there's almost always something new to try.
+        In 2024, the team opened a second Taproom & Barrel House in a restored
+        150+ year-old building in Uptown Marysville.
     </p>
 </section>
 
 <footer>
     <h3>Drink Better. Behave Worse.</h3>
+
+    <div class="footer-social">
+        <a href="https://instagram.com/illmanneredbeer" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com/illmanneredbeer" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:info@illmanneredbeer.com">info@illmanneredbeer.com</a>
+    </div>
+
+    <div class="footer-locations">
+        <div>
+            <strong>Powell Taproom & Brewery</strong><br>
+            38 Grace Drive, Powell, OH 43065<br>
+            (614) 859-6819
+        </div>
+        <div>
+            <strong>Marysville Taproom & Barrel House</strong><br>
+            117 S. Main Street, Marysville, OH 43040<br>
+            (937) 209-3708
+        </div>
+    </div>
 
     <div class="footer-links">
         <button onclick="showPopup('Privacy Policy')">Privacy Policy</button>
