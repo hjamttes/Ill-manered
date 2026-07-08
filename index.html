@@ -58,7 +58,7 @@ nav.scrolled{
     align-items:center;
     background:
         linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.8)),
-        url('images/Powell+Patio.jpg');
+        url('images/Powell Patio.jpg');
     background-size:cover;
     background-position:center;
 }
@@ -144,6 +144,20 @@ nav.scrolled{
     border-radius:2px;
     display:block;
 }
+.groundbreakers-list{
+    max-width:900px;
+    margin:35px auto 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:10px 20px;
+    text-align:left;
+}
+.groundbreakers-list span{
+    color:#ccc;
+    font-size:.9rem;
+    padding:8px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
 footer{
     text-align:center;
     padding:50px 8%;
@@ -225,10 +239,12 @@ footer{
 <nav id="navbar">
     <div class="logo">ILL MANNERED</div>
     <div class="nav-links">
-        <a href="#beer-board">Beer</a>
+        <a href="#beer-board">Beers</a>
         <a href="#locations">Taprooms</a>
+        <a href="#foodtrucks">Food Trucks</a>
         <a href="#events">Events</a>
         <a href="#story">About</a>
+        <a href="#groundbreakers">Groundbreakers</a>
         <a href="https://commerce.arryved.com/location/BHwJdw4e" target="_blank" rel="noopener">Order Online</a>
     </div>
 </nav>
@@ -294,7 +310,7 @@ footer{
 
     <div class="location-grid">
         <div class="location-card">
-            <img src="images/Powell+BB+Taproom.jpg" alt="Powell Taproom" class="location-img">
+            <img src="images/Powell BB Taproom.jpg" alt="Powell Taproom" class="location-img">
             <h3>Powell Brewery & Taproom</h3>
             <p>
                 Home to the brewery, featuring reclaimed barnwood details,
@@ -309,7 +325,7 @@ footer{
         </div>
 
         <div class="location-card">
-            <img src="images/Marysville+Taproom+Interior.jpg" alt="Marysville Taproom" class="location-img">
+            <img src="images/Marysville Taproom Interior.jpg" alt="Marysville Taproom" class="location-img">
             <h3>Uptown Marysville</h3>
             <p>
                 Located in a restored 150+ year-old building with original brick walls,
@@ -321,6 +337,22 @@ footer{
                 Mon: Closed &nbsp;|&nbsp; Tue–Thu: 4pm–10pm<br>
                 Fri: 3pm–10pm &nbsp;|&nbsp; Sat: 12pm–10pm &nbsp;|&nbsp; Sun: 12pm–8pm
             </p>
+        </div>
+    </div>
+</section>
+
+<section class="events" id="foodtrucks">
+    <h2>Food Trucks</h2>
+    <div class="location-grid">
+        <div class="location-card">
+            <h3>Powell Food Truck Schedule</h3>
+            <p>Rotating food trucks visit the Powell taproom throughout the month — check the current schedule before you head over.</p>
+            <a href="https://www.illmanneredbeer.com/powell-foodtrucks" target="_blank" rel="noopener" class="btn" style="margin-top:20px;">View This Month's Schedule</a>
+        </div>
+        <div class="location-card">
+            <h3>Marysville Eats</h3>
+            <p>Food options and rotating vendors for the Marysville Taproom & Barrel House.</p>
+            <a href="https://www.illmanneredbeer.com/marysville-foodtrucks" target="_blank" rel="noopener" class="btn" style="margin-top:20px;">View This Month's Schedule</a>
         </div>
     </div>
 </section>
@@ -354,7 +386,7 @@ footer{
 <section class="story" id="story">
     <h2>Award-Winning Ohio Craft Beer</h2>
 
-    <img src="images/8-8-2015-12+smaller.png" alt="Ill Mannered Brewing founders in front of the original brewery location" class="founders-img">
+    <img src="images/8-8-2015-12 smaller.jpg" alt="Ill Mannered Brewing founders in front of the original brewery location" class="founders-img">
 
     <p>
         Ill Mannered Brewing Company is the collective brain child of the Ill Mannered
@@ -369,6 +401,36 @@ footer{
         In 2024, the team opened a second Taproom & Barrel House in a restored
         150+ year-old building in Uptown Marysville.
     </p>
+</section>
+
+<section class="story" id="groundbreakers">
+    <h2>Groundbreakers</h2>
+    <p>We want to thank the following people for helping Ill Mannered Brewing get off the ground.</p>
+    <div class="groundbreakers-list">
+        <span>Jennifer Mathias</span><span>Kasi Romer-Jordan</span><span>Elizabeth Ayers</span>
+        <span>Amanda Ayers</span><span>Ryan Szymanski</span><span>Ryan Winn</span>
+        <span>Malissa Ayers</span><span>Tom & Christine Ayers</span><span>Mark Dropsey</span>
+        <span>Jeff O'Brien</span><span>Andy & Jenny Knapp</span><span>Justin & Lindsey Rauch</span>
+        <span>Kevin Hackshaw</span><span>Alison Szymanski</span><span>Ryan Mcafee</span>
+        <span>Steve & Whitney Eddington</span><span>Margot Romer-Jordan</span><span>Bob Romer-Jordan</span>
+        <span>Steve & Chelsea Knierim</span><span>Matt Lazar</span><span>Brad Johnson</span>
+        <span>Steve Hruby</span><span>Derek & Emily Brooks</span><span>Jesse & Erin Maldonado</span>
+        <span>Andrew Buergler</span><span>Andrew & Beth Urban</span><span>Dave Boone & Alyssa Gross</span>
+        <span>Adrienne Romer-Jordan</span><span>Zac Romer-Jordan</span><span>CJ Perrin Carpenter</span>
+        <span>Maureen & Jan O'Jdana</span><span>Arun Ponnappan</span><span>Chris & LeAnn Simpkins</span>
+        <span>Michael Rathburn</span><span>Kerri Rathburn</span><span>Joe Heath</span>
+        <span>Amy Heath</span><span>Megan Fluharty</span><span>Chase Fluharty</span>
+        <span>Jeff Mathias</span><span>Cathy Mathias</span><span>Chad Crnkovich</span>
+        <span>Gary Gleckner</span><span>Linda Gleckner</span><span>Brian & Rosemary Sartor</span>
+        <span>Bryan Feldner</span><span>Mike George</span><span>Debbie George</span>
+        <span>Eric Marotta</span><span>Natalie Marotta</span><span>Jim Boland</span>
+        <span>Mallie Boland</span><span>Scot & Monifa Reese</span><span>Eddie Hollins</span>
+        <span>John Gjamov</span><span>Jill Gjamov</span><span>Ryan Wertz</span>
+        <span>Jim Morrisey</span><span>Amy Morrisey</span><span>Tim Davis</span>
+        <span>Debbie Sagen</span><span>Julie Dannemiller</span><span>Rich Hart</span>
+        <span>Janelle Hart</span><span>Joe Getz</span><span>Morgan Hoxworth</span>
+        <span>Don Croucher</span><span>Sally Dannemiller</span><span>Ben Gingrich</span>
+    </div>
 </section>
 
 <footer>
