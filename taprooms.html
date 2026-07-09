@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taprooms | Ill Mannered Brewery</title>
+<meta name="description" content="Powell Brewery & Taproom and Uptown Marysville locations, hours, and addresses.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="logo"><a href="index.html">ILL MANNERED</a></div>
+    <div class="nav-links">
+        
+<a href="index.html">Home</a>        <a href="beers.html">Beers</a>        <a href="taprooms.html" class="current">Taprooms</a>        <a href="food-trucks.html">Food Trucks</a>        <a href="events.html">Events</a>        <a href="about.html">About</a>        <a href="groundbreakers.html">Groundbreakers</a>        <a href="https://commerce.arryved.com/location/BHwJdw4e" target="_blank" rel="noopener">Order Online</a>
+    </div>
+</nav>
+
+<section class="page-header">
+    <h1>Choose Your Hangout</h1>
+    <p>Two taprooms, two different atmospheres, same commitment to great beer and good company.</p>
+</section>
+
+<section class="locations" style="padding-top:0;">
+    <div class="location-grid">
+        <div class="location-card">
+            <img src="images/Powell+BB+Taproom.jpg" alt="Powell Taproom" class="location-img">
+            <h3>Powell Brewery & Taproom</h3>
+            <p>
+                Home to the brewery, featuring reclaimed barnwood details,
+                outdoor patio seating, rotating taps, and regular food truck visits.
+            </p>
+            <p class="location-meta">
+                38 Grace Drive, Powell, OH 43065<br>
+                (614) 859-6819<br><br>
+                Mon: 4pm&ndash;8pm &nbsp;|&nbsp; Tue&ndash;Thu: 4pm&ndash;10pm<br>
+                Fri: 3pm&ndash;10pm &nbsp;|&nbsp; Sat: 12pm&ndash;10pm &nbsp;|&nbsp; Sun: 12pm&ndash;8pm
+            </p>
+        </div>
+
+        <div class="location-card">
+            <img src="images/Marysville+Taproom+Interior.jpg" alt="Marysville Taproom" class="location-img">
+            <h3>Uptown Marysville</h3>
+            <p>
+                Located in a restored 150+ year-old building with original brick walls,
+                wood floors, barrel-house character, and an outdoor courtyard with fire pits.
+            </p>
+            <p class="location-meta">
+                117 S. Main Street, Marysville, OH 43040<br>
+                (937) 209-3708<br><br>
+                Mon: Closed &nbsp;|&nbsp; Tue&ndash;Thu: 4pm&ndash;10pm<br>
+                Fri: 3pm&ndash;10pm &nbsp;|&nbsp; Sat: 12pm&ndash;10pm &nbsp;|&nbsp; Sun: 12pm&ndash;8pm
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <h3>Drink Better. Behave Worse.</h3>
+
+    <div class="footer-social">
+        <a href="https://instagram.com/illmanneredbeer" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com/illmanneredbeer" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:info@illmanneredbeer.com">info@illmanneredbeer.com</a>
+    </div>
+
+    <div class="footer-locations">
+        <div>
+            <strong>Powell Taproom & Brewery</strong><br>
+            38 Grace Drive, Powell, OH 43065<br>
+            (614) 859-6819
+        </div>
+        <div>
+            <strong>Marysville Taproom & Barrel House</strong><br>
+            117 S. Main Street, Marysville, OH 43040<br>
+            (937) 209-3708
+        </div>
+    </div>
+
+    <div class="footer-links">
+        <button onclick="showPopup('Privacy Policy')">Privacy Policy</button>
+        <button onclick="showPopup('Terms of Service')">Terms of Service</button>
+    </div>
+
+    <p>&copy; Ill Mannered Brewing Company</p>
+</footer>
+
+<div id="legalModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+    </div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Ill Mannered Brewery</title>
+<meta name="description" content="The story of Ill Mannered Brewing Company.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="logo"><a href="index.html">ILL MANNERED</a></div>
+    <div class="nav-links">
+        
+<a href="index.html">Home</a>        <a href="beers.html">Beers</a>        <a href="taprooms.html">Taprooms</a>        <a href="food-trucks.html">Food Trucks</a>        <a href="events.html">Events</a>        <a href="about.html" class="current">About</a>        <a href="groundbreakers.html">Groundbreakers</a>        <a href="https://commerce.arryved.com/location/BHwJdw4e" target="_blank" rel="noopener">Order Online</a>
+    </div>
+</nav>
+
+<section class="story" style="padding-top:160px;">
+    <h1>Award-Winning Ohio Craft Beer</h1>
+
+    <img src="images/8-8-2015-12+smaller.jpg" alt="Ill Mannered Brewing founders in front of the original brewery location" class="founders-img">
+
+    <p>
+        Ill Mannered Brewing Company is the collective brain child of the Ill Mannered
+        Team: Ryan Romer-Jordan, Brian Mathias, Tom Ayers, and Greg Dannemiller &mdash;
+        passionate home brewers who combined their varied backgrounds to build a
+        unique brewing experience in the suburbs of Columbus.
+    </p>
+
+    <p>
+        The Powell Taproom is powered by a 6-barrel all-electric brewery, brewing
+        just 186 gallons at a time so there's almost always something new to try.
+        In 2024, the team opened a second Taproom & Barrel House in a restored
+        150+ year-old building in Uptown Marysville.
+    </p>
+</section>
+
+<footer>
+    <h3>Drink Better. Behave Worse.</h3>
+
+    <div class="footer-social">
+        <a href="https://instagram.com/illmanneredbeer" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com/illmanneredbeer" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:info@illmanneredbeer.com">info@illmanneredbeer.com</a>
+    </div>
+
+    <div class="footer-locations">
+        <div>
+            <strong>Powell Taproom & Brewery</strong><br>
+            38 Grace Drive, Powell, OH 43065<br>
+            (614) 859-6819
+        </div>
+        <div>
+            <strong>Marysville Taproom & Barrel House</strong><br>
+            117 S. Main Street, Marysville, OH 43040<br>
+            (937) 209-3708
+        </div>
+    </div>
+
+    <div class="footer-links">
+        <button onclick="showPopup('Privacy Policy')">Privacy Policy</button>
+        <button onclick="showPopup('Terms of Service')">Terms of Service</button>
+    </div>
+
+    <p>&copy; Ill Mannered Brewing Company</p>
+</footer>
+
+<div id="legalModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+    </div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>

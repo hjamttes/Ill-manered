@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events | Ill Mannered Brewery</title>
+<meta name="description" content="This week's events at Ill Mannered Brewing.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="logo"><a href="index.html">ILL MANNERED</a></div>
+    <div class="nav-links">
+        
+<a href="index.html">Home</a>        <a href="beers.html">Beers</a>        <a href="taprooms.html">Taprooms</a>        <a href="food-trucks.html">Food Trucks</a>        <a href="events.html" class="current">Events</a>        <a href="about.html">About</a>        <a href="groundbreakers.html">Groundbreakers</a>        <a href="https://commerce.arryved.com/location/BHwJdw4e" target="_blank" rel="noopener">Order Online</a>
+    </div>
+</nav>
+
+<section class="page-header">
+    <h1>This Week At Ill Mannered</h1>
+    <p>Trivia, live music, food trucks, and beer releases &mdash; here's what's on.</p>
+</section>
+
+<section class="events" style="padding-top:0;">
+    <div id="eventsList">
+    <div class="event">
+        <span>Trivia Night</span>
+        <span>Tuesday</span>
+    </div>
+
+    <div class="event">
+        <span>Live Music</span>
+        <span>Friday</span>
+    </div>
+
+    <div class="event">
+        <span>Food Truck Event</span>
+        <span>Saturday</span>
+    </div>
+
+    <div class="event">
+        <span>Special Beer Release</span>
+        <span>Sunday</span>
+    </div>
+    </div>
+</section>
+
+<footer>
+    <h3>Drink Better. Behave Worse.</h3>
+
+    <div class="footer-social">
+        <a href="https://instagram.com/illmanneredbeer" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com/illmanneredbeer" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:info@illmanneredbeer.com">info@illmanneredbeer.com</a>
+    </div>
+
+    <div class="footer-locations">
+        <div>
+            <strong>Powell Taproom & Brewery</strong><br>
+            38 Grace Drive, Powell, OH 43065<br>
+            (614) 859-6819
+        </div>
+        <div>
+            <strong>Marysville Taproom & Barrel House</strong><br>
+            117 S. Main Street, Marysville, OH 43040<br>
+            (937) 209-3708
+        </div>
+    </div>
+
+    <div class="footer-links">
+        <button onclick="showPopup('Privacy Policy')">Privacy Policy</button>
+        <button onclick="showPopup('Terms of Service')">Terms of Service</button>
+    </div>
+
+    <p>&copy; Ill Mannered Brewing Company</p>
+</footer>
+
+<div id="legalModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+    </div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
